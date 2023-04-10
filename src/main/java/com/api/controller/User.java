@@ -1,4 +1,7 @@
 package com.api.controller;
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,29 +13,66 @@ import jakarta.persistence.Table;
 public class User {
   @Id
   @GeneratedValue(strategy=GenerationType.AUTO)
-  private Integer id;
+  private String id;
 
   private String name;
 
   private String pass;
   
-  public User() {}
+  
+  private ArrayList<String> students = new ArrayList<String>();
+  
+  
 
-  public User(String name, String pass) {
+
+
+
+public User() {}
+
+
+
+  	
+ 
+  public User(ArrayList<String> students) {
 	super();
-	this.name = name;
-	this.pass = pass;
+	this.students = students;
 }
 
-public Integer getId() {
-    return id;
-  }
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
 
-  public String getName() {
+
+
+public User(String id, String name, String pass, ArrayList<String> students) {
+	super();
+	this.id = id;
+	this.name = name;
+	this.pass = pass;
+	this.students = students;
+}
+
+
+
+
+
+public ArrayList<String> getStudents() {
+		return students;
+	}
+
+  public void setStudents(ArrayList<String> students) {
+		this.students = students;
+	}
+	
+  
+
+  public String getId() {
+	return id;
+}
+
+public void setId(String id) {
+	this.id = id;
+}
+
+public String getName() {
     return name;
   }
 

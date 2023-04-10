@@ -1,5 +1,6 @@
 package com.api.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,11 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(path="/profile")
-public class UserProfileController {
+public class StudentController {
 	
 	
 	 @Autowired 
-	  private UserProfileRepo profileRepo;
+	  private StudentRepo studentsRepo;
 	 
 	 @PostMapping(path="/add") // Map ONLY POST Requests
 	  public @ResponseBody String addNewUser (@RequestParam String name
@@ -24,23 +25,23 @@ public class UserProfileController {
 	    // @ResponseBody means the returned String is the response, not a view name
 	    // @RequestParam means it is a parameter from the GET or POST request
 
-	    UserProfile n = new UserProfile();
+	    Student n = new Student();
 	    n.setName(name);
-	    profileRepo.save(n);
+	    studentsRepo.save(n);
 	    return "Saved";
 	  }
 	  
 
-	  @GetMapping(path="/all")
-	  public @ResponseBody Iterable<UserProfile> getAllUsers() {
+	  @GetMapping(path="/allStudent")
+	  public @ResponseBody Iterable<Student> getAllUsers() {
 	    // This returns a JSON or XML with the users
-	    return profileRepo.findAll();
+	    return studentsRepo.findAll();
 	  }
 	  
-	  @GetMapping(path="/user")
-	  public Optional<UserProfile> getUser(@RequestParam Integer id) {
+	  @GetMapping(path="/student")
+	  public List<Student> getUser(@RequestParam String id) {
 		  
-		  return profileRepo.findById(id);
+		  return studentsRepo.findById(id);
 		  
 	    
 	 }

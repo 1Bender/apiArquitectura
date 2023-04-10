@@ -13,5 +13,6 @@ public interface UserRepo extends CrudRepository<User, Integer>, QueryByExampleE
 	
 	List<User> findByName(String name);
 	List<User> findByNameAndPass(String name, String pass);
+	List<User> findById(String id);
 
 }
