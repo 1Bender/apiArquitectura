@@ -18,18 +18,18 @@ public class NotasController {
 	
 	 @Autowired 
 	  private NotasRepo notasRepo;
-	 /*
+	 
 	 @PostMapping(path="/add") // Map ONLY POST Requests
-	  public @ResponseBody String addNewUser (@RequestParam String name
-	      , @RequestParam Integer id) {
-	    // @ResponseBody means the returned String is the response, not a view name
-	    // @RequestParam means it is a parameter from the GET or POST request
+	  public @ResponseBody String addNotes (@RequestParam String id, @RequestParam Double notaMat, @RequestParam Double notaLeng, @RequestParam Double notaDib, @RequestParam Double notaSoci) {
 
-	    Student n = new Student();
-	    n.setName(name);
-	    notasRepo.save(n);
+		List<Notas> notas = notasRepo.findById(id);
+		notas.get(0).setDibujo(notaDib);
+		notas.get(0).setLengua(notaLeng);
+	    notas.get(0).setMatematicas(notaMat);
+	    notas.get(0).setSocial(notaSoci);
+	    notasRepo.save(notas.get(0));
 	    return "Saved";
-	  }*/
+	  }
 	  
 
 	  @GetMapping(path="/allStudent")

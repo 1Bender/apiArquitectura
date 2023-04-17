@@ -39,9 +39,9 @@ public class StudentController {
 	  }
 	  
 	  @GetMapping(path="/student")
-	  public List<Student> getUser(@RequestParam String id) {
+	  public List<Student> getUser(@RequestParam String name) {
 		  
-		  return studentsRepo.findById(id);
+		  return studentsRepo.findByName(name);
 		  
 	    
 	 }

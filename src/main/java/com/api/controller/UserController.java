@@ -73,7 +73,7 @@ public class UserController {
 @PostMapping(path="/students")
  public @ResponseBody List<User> getAcces(@RequestParam String id) {
 	  
-	User profe = new User();
+
 	  
 	
 	

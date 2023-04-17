@@ -11,80 +11,93 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "users")
 public class User {
-  @Id
-  @GeneratedValue(strategy=GenerationType.AUTO)
-  private String id;
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private String id;
 
-  private String name;
+	private String name;
 
-  private String pass;
-  
-  
-  private ArrayList<String> students = new ArrayList<String>();
-  
-  
+	private String pass;
 
+	private ArrayList<String> students = new ArrayList<String>();
 
-
-
-public User() {}
-
-
-
-  	
- 
-  public User(ArrayList<String> students) {
-	super();
-	this.students = students;
-}
+	private String classroom;
 
 
 
 
 
-public User(String id, String name, String pass, ArrayList<String> students) {
-	super();
-	this.id = id;
-	this.name = name;
-	this.pass = pass;
-	this.students = students;
-}
+
+	public User() {}
 
 
 
 
 
-public ArrayList<String> getStudents() {
+	public User(ArrayList<String> students) {
+		super();
+		this.students = students;
+	}
+
+
+
+
+
+	public User(String id, String name, String pass, ArrayList<String> students) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.pass = pass;
+		this.students = students;
+	}
+
+
+
+
+
+	public ArrayList<String> getStudents() {
 		return students;
 	}
 
-  public void setStudents(ArrayList<String> students) {
+	public void setStudents(ArrayList<String> students) {
 		this.students = students;
 	}
-	
-  
 
-  public String getId() {
-	return id;
-}
 
-public void setId(String id) {
-	this.id = id;
-}
 
-public String getName() {
-    return name;
-  }
+	public String getId() {
+		return id;
+	}
 
-  public void setName(String name) {
-    this.name = name;
-  }
+	public void setId(String id) {
+		this.id = id;
+	}
 
-  public String getPass() {
-    return pass;
-  }
+	public String getName() {
+		return name;
+	}
 
-  public void setPass(String pass) {
-    this.pass = pass;
-  }
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getPass() {
+		return pass;
+	}
+
+	public void setPass(String pass) {
+		this.pass = pass;
+	}
+
+	public String getClassroom() {
+		return classroom;
+	}
+
+
+	public void setClassroom(String classroom) {
+		this.classroom = classroom;
+	}
+
+
+
 }

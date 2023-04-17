@@ -7,6 +7,6 @@ import org.springframework.data.repository.query.QueryByExampleExecutor;
 
 public interface StudentRepo extends CrudRepository<Student, Integer>, QueryByExampleExecutor<Student> {
 	
-	List<Student> findById(String id);
+	List<Student> findByName(String name);
 
 }

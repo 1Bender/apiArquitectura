@@ -10,53 +10,53 @@ import jakarta.persistence.Table;
 @Table(name = "notas")
 public class Notas {
 	
-	private List<Float> matematicas;
+	private List<Double> matematicas;
 	
-	private List<Float> social;
+	private List<Double> social;
 	
-	private List<Float> lengua;
+	private List<Double> lengua;
 	
-	private List<Float> dibujo;
+	private List<Double> dibujo;
 	
 	@Id
-	String id;
+	private String id;
 
 	public Notas() {
 	
 	}
 
-	public List<Float> getMatematicas() {
+	public List<Double> getMatematicas() {
 		return matematicas;
 	}
 
-	public void setMatematicas(Float nuevaNota) {
+	public void setMatematicas(Double nuevaNota) {
 		
 		this.matematicas.add(nuevaNota);
 	}
 
-	public List<Float> getSocial() {
+	public List<Double> getSocial() {
 		return social;
 	}
 
-	public void setSocial(Float nuevaNota) {
+	public void setSocial(Double nuevaNota) {
 		
 		this.social.add(nuevaNota);
 	}
 
-	public List<Float> getLengua() {
+	public List<Double> getLengua() {
 		return lengua;
 	}
 
-	public void setLengua(Float nuevaNota) {
+	public void setLengua(Double nuevaNota) {
 		
 		this.lengua.add(nuevaNota);
 	}
 
-	public List<Float> getDibujo() {
+	public List<Double> getDibujo() {
 		return dibujo;
 	}
 
-	public void setDibujo(Float nuevaNota) {
+	public void setDibujo(Double nuevaNota) {
 		
 		this.dibujo.add(nuevaNota);
 	}
@@ -68,8 +68,6 @@ public class Notas {
 	public void setId(String id) {
 		this.id = id;
 	}
-	
-	
 	
 	
 	
