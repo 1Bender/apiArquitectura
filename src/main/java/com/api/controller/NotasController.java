@@ -23,12 +23,20 @@ public class NotasController {
 	  public @ResponseBody String addNotes (@RequestParam String id, @RequestParam Double notaMat, @RequestParam Double notaLeng, @RequestParam Double notaDib, @RequestParam Double notaSoci) {
 
 		List<Notas> notas = notasRepo.findById(id);
+		if(notaDib!=-100) {
 		notas.get(0).setDibujo(notaDib);
+		}
+		if(notaLeng!=-100) {
 		notas.get(0).setLengua(notaLeng);
+		}
+		if(notaMat!=-100) {
 	    notas.get(0).setMatematicas(notaMat);
+		}
+		if(notaSoci!=-100) {
 	    notas.get(0).setSocial(notaSoci);
+		}
 	    notasRepo.save(notas.get(0));
-	    return "Saved";
+	    return "saved";
 	  }
 	  
 
